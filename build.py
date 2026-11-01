@@ -17,6 +17,36 @@ EXTERNAL = [
 ]
 
 APPS = {
+    "b737-recurrent": {
+        "name": "B737 Recurrent",
+        "updated": ("November 1, 2026", "1º de novembro de 2026"),
+        "tagline": "Study the Boeing 737 NG and MAX systems with questions, flashcards and spaced review.",
+        "tagline_pt": "Estude os sistemas do Boeing 737 NG e MAX com perguntas, flashcards e revisão espaçada.",
+        "faq": [
+            ("Can I use this app for flight?",
+             "No. B737 Recurrent is a study aid only. Your company's approved manuals always take precedence, and the app must never be used for flight, flight planning or any operational decision."),
+            ("Is the app affiliated with Boeing or an airline?",
+             "No. It is independent and not affiliated with, endorsed or sponsored by The Boeing Company or any airline. Boeing and 737 are trademarks of The Boeing Company."),
+            ("How do I cancel my subscription?",
+             "Subscriptions are managed by Apple or Google. On iPhone: Settings, your name, Subscriptions. On Android: Google Play, Payments and subscriptions. Cancel at least 24 hours before the renewal date."),
+            ("I bought a subscription on another phone. How do I get it back?",
+             "Open Settings in the app and tap Restore purchases, signed in to the same Apple ID or Google account."),
+        ],
+        "privacy": [
+            "<strong>B737 Recurrent does not collect, sell or share personal data for advertising or tracking.</strong>",
+            "Your answers, flashcard progress, statistics and settings are stored only on your phone. Deleting the app removes them.",
+            "Study reminders are local notifications scheduled on your phone; no server sends them.",
+            "Subscriptions are processed by Apple or Google. We use RevenueCat to confirm whether a subscription is active; it receives an anonymous app user ID and the purchase receipt from the store, not your name or email. See RevenueCat's privacy policy at revenuecat.com.",
+            "There are no accounts, no analytics and no advertising.",
+        ],
+        "privacy_pt": [
+            "<strong>O B737 Recurrent não coleta, vende nem compartilha dados pessoais para publicidade ou rastreamento.</strong>",
+            "Suas respostas, o progresso dos flashcards, as estatísticas e os ajustes ficam só no seu celular. Apagar o app apaga tudo.",
+            "Os lembretes de estudo são notificações locais agendadas no próprio celular; nenhum servidor as envia.",
+            "As assinaturas são processadas pela Apple ou pelo Google. Usamos o RevenueCat para confirmar se a assinatura está ativa; ele recebe um identificador anônimo do app e o recibo da loja, não seu nome nem seu e-mail.",
+            "Não há conta, análise de uso nem anúncios.",
+        ],
+    },
     "diskorbit": {
         "name": "DiskOrbit",
         "tagline": "See what is using space on your Mac, and get it back safely.",
@@ -155,7 +185,7 @@ def main() -> None:
     cards += [f'<a class="card" href="{url}"><strong>{html.escape(name)}</strong><span>{html.escape(tagline)}</span></a>'
               for name, tagline, url in EXTERNAL]
     write(ROOT / "index.html", page("Apps by Dion Lima", f"""<h1>Apps by Dion Lima</h1>
-<p class="lead">Small, private Mac apps. Support and privacy policies for each one.</p>
+<p class="lead">Small, private apps. Support and privacy policies for each one.</p>
 <div class="grid">
 {chr(10).join(cards)}
 </div>""", depth=0))
@@ -177,7 +207,7 @@ def main() -> None:
         items_pt = "\n".join(f"<li>{line}</li>" for line in app["privacy_pt"])
         write(ROOT / slug / "privacy.html", page(f"{app['name']} Privacy Policy", f"""<p><a href="./">← {name}</a></p>
 <h1>{name} Privacy Policy</h1>
-<p class="meta">Last updated: {UPDATED_EN}</p>
+<p class="meta">Last updated: {app.get("updated", (UPDATED_EN, UPDATED_PT))[0]}</p>
 <section>
 <ul>
 {items}
@@ -186,7 +216,7 @@ def main() -> None:
 </section>
 <section id="pt" lang="pt-BR">
 <h2>Política de privacidade (português)</h2>
-<p class="meta">Última atualização: {UPDATED_PT}</p>
+<p class="meta">Última atualização: {app.get("updated", (UPDATED_EN, UPDATED_PT))[1]}</p>
 <ul>
 {items_pt}
 </ul>
