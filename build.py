@@ -19,7 +19,7 @@ EXTERNAL = [
 APPS = {
     "b737-recurrent": {
         "name": "B737 Recurrent",
-        "updated": ("November 1, 2026", "1º de novembro de 2026"),
+        "updated": ("November 5, 2026", "5 de novembro de 2026"),
         "tagline": "Study the Boeing 737 NG and MAX systems with questions, flashcards and spaced review.",
         "tagline_pt": "Estude os sistemas do Boeing 737 NG e MAX com perguntas, flashcards e revisão espaçada.",
         "faq": [
@@ -29,6 +29,8 @@ APPS = {
              "No. It is independent and not affiliated with, endorsed or sponsored by The Boeing Company or any airline. Boeing and 737 are trademarks of The Boeing Company."),
             ("How do I cancel my subscription?",
              "Subscriptions are managed by Apple or Google. On iPhone: Settings, your name, Subscriptions. On Android: Google Play, Payments and subscriptions. Cancel at least 24 hours before the renewal date."),
+            ("How do I report a comment or a user?",
+             "In a discussion, long-press the comment (or tap Report or block) to report it or block its author. Comments with several reports are hidden until reviewed. To reach the developer about a comment, open an issue in this repository with the question and the comment text."),
             ("I bought a subscription on another phone. How do I get it back?",
              "Open Settings in the app and tap Restore purchases, signed in to the same Apple ID or Google account."),
         ],
@@ -37,14 +39,16 @@ APPS = {
             "Your answers, flashcard progress, statistics and settings are stored only on your phone. Deleting the app removes them.",
             "Study reminders are local notifications scheduled on your phone; no server sends them.",
             "Subscriptions are processed by Apple or Google. We use RevenueCat to confirm whether a subscription is active; it receives an anonymous app user ID and the purchase receipt from the store, not your name or email. See RevenueCat's privacy policy at revenuecat.com.",
-            "There are no accounts, no analytics and no advertising.",
+            "Discussions are optional. If you post a comment, the app signs in with an anonymous ID (no name, email or phone) and stores your comment, the nickname you chose and the question it belongs to on Google Firebase, where other users of the app can read them. You can delete any of your comments, or all of them at once in Settings. Comments can be reported by other users and are reviewed by the developer.",
+            "There are no analytics and no advertising.",
         ],
         "privacy_pt": [
             "<strong>O B737 Recurrent não coleta, vende nem compartilha dados pessoais para publicidade ou rastreamento.</strong>",
             "Suas respostas, o progresso dos flashcards, as estatísticas e os ajustes ficam só no seu celular. Apagar o app apaga tudo.",
             "Os lembretes de estudo são notificações locais agendadas no próprio celular; nenhum servidor as envia.",
             "As assinaturas são processadas pela Apple ou pelo Google. Usamos o RevenueCat para confirmar se a assinatura está ativa; ele recebe um identificador anônimo do app e o recibo da loja, não seu nome nem seu e-mail.",
-            "Não há conta, análise de uso nem anúncios.",
+            "As discussões são opcionais. Se você comentar, o app entra com um identificador anônimo (sem nome, e-mail ou telefone) e guarda no Google Firebase o comentário, o apelido escolhido e a pergunta a que ele se refere, para os outros usuários do app lerem. Você pode apagar qualquer comentário seu, ou todos de uma vez nos Ajustes. Comentários podem ser denunciados por outros usuários e são revistos pelo desenvolvedor.",
+            "Não há análise de uso nem anúncios.",
         ],
     },
     "diskorbit": {
